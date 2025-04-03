@@ -1,44 +1,38 @@
-# music-and-podcast-analytics-platform
-Music Analytics Platform
-Music and Podcast's version of an advanced Nielsen analytics project
+# 🎧 Music and Podcast Analytics Platform
 
-# Music Analytics Platform 🎵📊
+A full-stack Flask web application for tracking, analyzing, and visualizing real-time music and podcast streaming metrics with Spotify integration. Built with PostgreSQL, SQLAlchemy, Plotly.js, and Flask.
 
-**Music Analytics Platform** is a tool designed to empower music artists, podcasters, and advertisers by providing actionable insights into streaming performance, audience demographics, and trends. Our goal is to make data-driven decisions easy and accessible for creators and businesses in the music and podcasting industries.
+![screenshot](https://raw.githubusercontent.com/bini1995/music-and-podcast-analytics-platform/main/screenshot.png)
 
 ---
 
 ## 🚀 Features
 
-- **Streaming Metrics**: Track plays, skips, saves, and downloads across multiple platforms.
-- **Audience Insights**: Understand listener demographics like age, location, and engagement.
-- **Trend Analysis**: Identify emerging trends and top-performing content.
-- **Custom Dashboards**: Visualize data with interactive charts and graphs.
-- **Cross-Platform Analytics**: Compare performance across platforms like Spotify, Apple Music, and YouTube.
+- 🔐 **User Authentication**: Register, login, logout, and 2FA support.
+- 📊 **Dashboard**: Interactive analytics using Plotly.js for top songs and artists.
+- 🧠 **Spotify API Integration**: Live querying and data sync with Spotify's public API.
+- 🗃️ **PostgreSQL Storage**: Tracks plays, likes, shares, saves per track.
+- 🧩 **Blueprint Architecture**: Modularized for scalability.
+- 👤 **Admin Portal**: View users, moderate content, and analytics.
+- 🌐 **REST API Endpoints**: `/spotify/visuals`, `/register`, `/login`, etc.
 
 ---
 
-## 🔧 Tech Stack
+## 🛠️ Tech Stack
 
-- **Frontend**: React.js for a responsive and dynamic user interface.
-- **Backend**: Python (Flask/Django) for API development and data processing.
-- **Database**: PostgreSQL for structured data storage.
-- **AI/ML**: TensorFlow for predictive analytics and recommendations.
-- **APIs**: Integrations with Spotify, Apple Music, and YouTube.
+- **Backend**: Flask, SQLAlchemy, PostgreSQL
+- **Frontend**: Plotly.js, HTML5, JavaScript
+- **Auth**: Flask-Login, Flask-WTF, pyotp (2FA)
+- **Deploy**: Render.com (live link coming soon)
+- **DevOps**: .env + Gunicorn for production
 
 ---
 
-## 📚 Getting Started
+## 🔧 Setup Instructions
 
-### Prerequisites
-- Python 3.8+
-- PostgreSQL 14+
-- Node.js 16+
-- Git
+### 1. Clone the repo
 
-### Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/bini1995/music-and-podcast-analytics-platform.git
-   cd music-analytics-platform
-
+```bash
+git clone git@github.com:bini1995/music-and-podcast-analytics-platform.git
+cd music-and-podcast-analytics-platform
+```
