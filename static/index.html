@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music and Podcast Analytics</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Music and Podcast Analytics</h1>
+
+    <!-- Login Section -->
+    <div id="auth-container">
+        <div id="login-form">
+            <h2>Login</h2>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button id="login-button">Login</button>
+        </div>
+        <div id="user-info" style="display: none;">
+            <p>Welcome, <span id="user-name"></span>!</p>
+            <button id="logout-button">Logout</button>
+        </div>
+    </div>
+
+    <h2>All Songs in Database</h2>
+    <button id="fetch-songs-button">Fetch Songs</button>
+    <div id="pagination-controls">
+        <button id="prev-button">Previous</button>
+        <button id="next-button">Next</button>
+    </div>
+    <ul id="songs-container"></ul>
+
+    <h2>Most Popular Songs (Visualization)</h2>
+    <canvas id="songs-chart"></canvas>
+
+    <h2>Search and Store Songs from Spotify</h2>
+    <input type="text" id="query-input" placeholder="Enter a song or artist">
+    <button id="search-and-store-button">Search and Store</button>
+
+    <h2>All Songs in Database</h2>
+    <button id="fetch-songs-button-bottom">Fetch Songs</button>
+    <button id="export-csv-button">Export to CSV</button>
+    <button id="update-song-button">Update Song</button>
+    <button id="delete-song-button">Delete Song</button>
+
+    <div id="songs-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/static/script.js" defer></script>
+</body>
+</html>
