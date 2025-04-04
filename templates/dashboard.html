@@ -1,38 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Spotify Analytics Dashboard</title>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="/static/script.js" defer></script>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
-      }
-      h1 {
-        text-align: center;
-      }
-      #most-played,
-      #top-artists,
-      #raw-data {
-        width: 80%;
-        margin: 20px auto;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-      }
-      pre {
-        background: #f4f4f4;
-        padding: 10px;
-        border-radius: 5px;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Spotify Analytics Dashboard</h1>
-    <div id="raw-data"><pre>Loading data...</pre></div>
-    <div id="most-played"></div>
-    <div id="top-artists"></div>
-  </body>
-</html>
+{% extends "base.html" %} {% block title %}Dashboard{% endblock %} {% block
+content %}
+<h2>User Dashboard</h2>
+<div id="most-played"></div>
+<div id="top-artists"></div>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock %}

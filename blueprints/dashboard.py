@@ -1,18 +1,18 @@
-from flask import Flask, render_template, jsonify
-from models import db, StreamingMetrics
-import plotly.express as px
+# blueprints/dashboard.py
+
+from flask import Blueprint, render_template, jsonify
+from models import StreamingMetrics
 import pandas as pd
+import plotly.express as px
 
-app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://username:password@localhost/musicdb"
-db.init_app(app)
+dashboard_bp = Blueprint("dashboard", __name__)
 
-@app.route("/")
+@dashboard_bp.route("/")
 def index():
     """Main dashboard page."""
     return render_template("dashboard.html")
 
-@app.route("/spotify/data")
+@dashboard_bp.route("/spotify/data")
 def spotify_data():
     """Fetches streaming metrics from the database for visualization."""
     metrics = StreamingMetrics.query.all()
@@ -26,7 +26,7 @@ def spotify_data():
     } for m in metrics]
     return jsonify(data)
 
-@app.route("/spotify/visuals")
+@dashboard_bp.route("/spotify/visuals")
 def spotify_visuals():
     """Generates interactive Spotify analytics charts."""
     metrics = StreamingMetrics.query.all()
@@ -39,14 +39,10 @@ def spotify_visuals():
         "Saves": m.saves
     } for m in metrics])
 
-    # Generate visualizations
     fig1 = px.bar(df, x="Song", y="Plays", title="Most Played Songs")
     fig2 = px.bar(df, x="Artist", y="Plays", title="Top Artists by Plays")
-    
+
     return jsonify({
         "most_played_songs": fig1.to_json(),
         "top_artists": fig2.to_json()
     })
-
-if __name__ == "__main__":
-    app.run(debug=True)

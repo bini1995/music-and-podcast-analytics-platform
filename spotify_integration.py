@@ -92,6 +92,24 @@ def store_search_results(query, app):
     else:
         print(f"[ERROR] Spotify API Error: {response.status_code}")
 
+def get_most_played():
+    return [
+        {"song": "Viva La Vida", "plays": 172},
+        {"song": "Yellow", "plays": 180},
+        {"song": "feelslikeimfallinginlove - Single Version", "plays": 148},
+        {"song": "feelslikeimfallinginlove", "plays": 140},
+        {"song": "Clocks", "plays": 168},
+    ]
+
+def get_top_artists():
+    return [
+        {"artist": "Coldplay", "plays": 172},
+        {"artist": "Coldplay", "plays": 180},
+        {"artist": "Coldplay", "plays": 148},
+        {"artist": "Coldplay", "plays": 140},
+        {"artist": "Coldplay", "plays": 168},
+    ]
+
 
 if __name__ == "__main__":
     query = "Shape of You"  # Replace with any song name
