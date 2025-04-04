@@ -48,6 +48,8 @@ def register():
     db.session.commit()
     return jsonify({"message": "Registered successfully"}), 201
 
+
+
 @auth_bp.route("/logout")
 @login_required
 def logout():
